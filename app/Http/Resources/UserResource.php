@@ -18,7 +18,7 @@ class UserResource extends JsonResource
         if (!empty($this->additional['error']))
             return ['error' => $this->additional['error']];
 
-        return ['data' => [
+        return ['user' => [
             'email' => $this->email,
             'api_token' => $this->api_token
             ]

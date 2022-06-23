@@ -5,6 +5,7 @@ namespace App\Service;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Resources\UserResource;
+use Illuminate\Support\Str;
 
 class UserService
 {

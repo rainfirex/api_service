@@ -30,7 +30,7 @@ class EquipmentRequest extends FormRequest
     {
         return [
             'serialnumber.required'      => 'Заполните sn',
-            'serialnumber.unique'        => 'sn используется ',
+            'serialnumber.unique'        => 'Серийный номер используется',
             'mask_serialnumber.required' => 'Заполните mask',
             'name_type.required'         => 'Заполните type',
         ];

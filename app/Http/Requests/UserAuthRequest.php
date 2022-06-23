@@ -29,10 +29,10 @@ class UserAuthRequest extends FormRequest
     public function messages()
     {
         return [
-            'email.required'    => 'Укажите почту',
-            'email.email'       => 'Укажите почту правильно',
-            'password.required' => 'Укажите пароль',
-            'password.min'      => 'Укажите минимум 6 символов'
+            'email.required'    => 'Укажите почту.',
+            'email.email'       => 'Укажите почту правильно.',
+            'password.required' => 'Укажите пароль.',
+            'password.min'      => 'Укажите минимум 6 символов.'
         ];
     }
 

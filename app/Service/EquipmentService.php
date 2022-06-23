@@ -35,21 +35,15 @@ class EquipmentService
             foreach ($successData as $data){
                 $equipment_data = $data['equipment'];
 
-                $type = TypeEquipment::create([
-                    'name_type'         => $equipment_data['name_type'],
-                    'mask_serialnumber' => $equipment_data['mask_serialnumber']
+                $equipment = Equipment::create([
+                    'serialnumber'   => $equipment_data['serialnumber'],
+                    'note'           => $equipment_data['note'],
+                    'type_equipment_id' => $equipment_data['type_equipment_id']
                 ]);
 
-                $equi = new Equipment([
-                    'serialnumber' => $equipment_data['serialnumber'],
-                    'note' => $equipment_data['note']
-                ]);
-
-                $equipment = $type->equipment()->save($equi);
                 $this->createdId[] = $equipment->id;
             }
         }
-
         return $this;
     }
 
@@ -72,7 +66,6 @@ class EquipmentService
 
             $this->updateEquipment = $type->equipment;
         }
-
         return $this;
     }
 
@@ -82,11 +75,11 @@ class EquipmentService
      * @return EquipmentCollection
      */
     public function getCollection(): EquipmentCollection{
-        $failData    = $this->parser->getFailData();
+        $failData = $this->parser->getFailData();
+
 
         $collection = new EquipmentCollection(Equipment::whereIn('id', $this->createdId)->get());
-        if($failData)
-            $collection->additional(['fail' => $failData]);
+        $collection->additional(['fail' => $failData]);
 
         return $collection;
     }
@@ -100,8 +93,7 @@ class EquipmentService
         $failData = $this->parser->getFailData();
 
         $resourse = new EquipmentUpdateResource($this->updateEquipment);
-        if ($failData)
-            $resourse->additional(['fail' => $failData]);
+        $resourse->additional(['fail' => $failData]);
 
         return $resourse;
     }

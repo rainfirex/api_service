@@ -18,18 +18,16 @@ class EquipmentCollectionRequest extends FormRequest
         return [
             'equipments'                     => 'required|array',
             'equipments.*.serialnumber'      => 'required|unique:equipment',
-            'equipments.*.mask_serialnumber' => 'required'
         ];
     }
 
     public function messages()
     {
         return [
-            'equipments.required'                     => 'Заполните данными',
+            'equipments.required'                     => 'Заполните массив',
             'equipments.array'                        => 'Укажите массив',
-            'equipments.*.serialnumber.required'      => 'Заполните sn',
-            'equipments.*.serialnumber.unique'        => 'sn используется',
-            'equipments.*.mask_serialnumber.required' => 'Заполните mask'
+            'equipments.*.serialnumber.required'      => 'Серийный номер не указан',
+            'equipments.*.serialnumber.unique'        => 'Серийный номер используется',
         ];
     }
 

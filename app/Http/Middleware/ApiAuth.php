@@ -25,7 +25,9 @@ class apiAuth
             return $next($request);
         else
             return response([
-                'message' => 'Unauthenticated'
+                'message' => 'Unauthenticated',
+                'auth'    => false,
+                'success' => false
             ], 403);
     }
 }

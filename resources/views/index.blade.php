@@ -15,6 +15,9 @@
         </style>
     </head>
     <body class="antialiased">
-    <h1>test</h1>
+        <div id="app">
+            <app/>
+        </div>
+        <script src="{{ mix('js/app.js') }}"></script>
     </body>
 </html>

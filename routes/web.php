@@ -14,4 +14,4 @@ use App\Http\Controllers\AgentController;
 |
 */
 
-Route::view('/', 'index');
+Route::view('{path}', 'index')->where('path', '.*');

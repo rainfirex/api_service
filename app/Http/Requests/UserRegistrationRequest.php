@@ -29,11 +29,11 @@ class UserRegistrationRequest extends FormRequest
     public function messages()
     {
         return [
-            'email.required'    => 'Укажите почту',
-            'email.email'       => 'Укажите почту правильно',
-            'email.unique'      => 'Укажите другую почту',
-            'password.required' => 'Укажите пароль',
-            'password.min'      => 'Укажите минимум 6 символов'
+            'email.required'    => 'Укажите почту.',
+            'email.email'       => 'Укажите почту правильно.',
+            'email.unique'      => 'Укажите другую почту.',
+            'password.required' => 'Укажите пароль.',
+            'password.min'      => 'Укажите минимум 6 символов.'
         ];
     }
 
